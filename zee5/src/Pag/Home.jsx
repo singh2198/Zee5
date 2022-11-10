@@ -11,6 +11,7 @@ export const GetSliderimg=()=>{
 const Home=()=>{
     const [movie,setmovie]=useState([])
     const movi = movie[Math.floor(Math.random() * movie.length)];
+    console.log(movi)
 
     useEffect(()=>{
         GetSliderimg().then((el)=> {
@@ -22,21 +23,18 @@ const Home=()=>{
     },[])
 
     return(
-        <div style={{display: "grid",
-        gridTemplateColumns: '3fr 3fr' ,
-        gap:"10"
-        }}>
-            {movie.map((el)=>{
+        <div>
+            {/* {movie.map((el,index)=>{
                 return (
 
-                    <div style={{height:"350px", width:"40px"}}>
-                        
-                        <img src={`https://image.tmdb.org/t/p/original/backdrop_path}`}width="153px"></img>
-                        {/* <p>{el.Title}</p>
-                        <p>{el.Year}</p> */}
-                    </div>
+                    
                 )
-            })}
+            })} */}
+            <div>
+                        
+                        <img src={`https://image.tmdb.org/t/p/original/${movi?.backdrop_path}`} alt={movi?.title} width="100%" height="550px" key={movi?.id}></img>
+                        
+                    </div>
         </div>
     )
 
