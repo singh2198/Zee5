@@ -1,6 +1,13 @@
 .App {
   /* text-align: center; */
 }
+body{
+  background-color: #090b0f;
+}
+#display{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+}
 
 .App-logo {
   height: 40vmin;

@@ -10,7 +10,7 @@ const Navbar=()=>{
     return(
         <>
 
-        <div style={{display:"flex" ,justifyContent:"space-between", backgroundColor:"black", height:"60px"}}>
+        <div style={{display:"flex" ,justifyContent:"space-between",  height:"60px"}}>
             <div style={{display:"flex" ,justifyContent:"space-around"}}>
 
                  
@@ -18,11 +18,11 @@ const Navbar=()=>{
                 <Navigation/>
             </div>
 
-            <div style={{border:"2px solid", width:"50%" ,display:"flex" ,justifyContent:"space-evenly"}}>
-                <input type="text"  placeholder="Search" style={{height:"22px" ,marginTop :"8px",width:"40%"}} />
-                <button style={{height:"26px" ,marginTop :"8px",width:"50px"}}>Login </button>
-                <button style={{height:"26px" ,marginTop :"8px",width:"70px"}}>Buy Plan</button>
-            </div>
+            {/* <div style={{border:"2px solid", width:"50%" ,display:"flex" ,justifyContent:"space-evenly"}}> */}
+                {/* <input type="text"  placeholder="Search" style={{height:"22px" ,marginTop :"8px",width:"40%"}} /> */}
+                {/* <button style={{height:"26px" ,marginTop :"8px",width:"50px"}}>Login </button> */}
+                {/* <button style={{height:"26px" ,marginTop :"8px",width:"70px"}}>Buy Plan</button> */}
+            {/* </div> */}
 
         </div>
 

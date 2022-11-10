@@ -4,20 +4,42 @@ import { useEffect } from "react"
 
 export const GetSliderimg=()=>{
 
-    return axios.get("http://www.omdbapi.com/?apikey=bc5b4794&s=race")
+    return axios.get('https://api.themoviedb.org/3/movie/popular?api_key=2487038adcb585d8971a01ba877c89b1')
+    
 }
 
 const Home=()=>{
-    const [slider,setslide]=useState("")
+    const [movie,setmovie]=useState([])
+    const movi = movie[Math.floor(Math.random() * movie.length)];
 
     useEffect(()=>{
-        GetSliderimg().then((el)=> {console.log(el.data)})
-        setslide(slider)
+        GetSliderimg().then((el)=> {
+            console.log(el.data.results)
+            setmovie(el.data.results)
+        })
         
-    },[slider])
+        
+    },[])
 
     return(
-        <h2></h2>
+        <div style={{display: "grid",
+        gridTemplateColumns: '3fr 3fr' ,
+        gap:"10"
+        }}>
+            {movie.map((el)=>{
+                return (
+
+                    <div style={{height:"350px", width:"40px"}}>
+                        
+                        <img src={`https://image.tmdb.org/t/p/original/backdrop_path}`}width="153px"></img>
+                        {/* <p>{el.Title}</p>
+                        <p>{el.Year}</p> */}
+                    </div>
+                )
+            })}
+        </div>
     )
+
+    
 }
 export default Home
