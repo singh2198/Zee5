@@ -9,11 +9,12 @@ export function Footer(){
         <>
             <div>
 
-                <div style={{display:"flex",justifyContent:"space-evenly" ,width:"700px" , fontFamily:"revert"  }}>
+                <div style={{display:"flex",justifyContent:"space-evenly" ,width:"700px" , fontFamily:"revert" ,border:"1px solid red" }}>
                     <h5 style={{color:"white"}}>About us |</h5>
                     <h5  style={{color:"white"}}>Help Center |</h5>
                     <h5 style={{color:"white"}}>Privacy Policy |</h5>
                     <h5 style={{color:"white"}}> Terms of Use |</h5>
+                    {/* <h5  className='text-white'> Preferences |</h5> */}
                     <h5 style={{color:"white"}}> Preferences |</h5>
                 </div>
 

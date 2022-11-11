@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Stack, HStack, VStack ,Box} from '@chakra-ui/react'
+import {  HStack,Box} from '@chakra-ui/react'
 
 
 const Navigation =()=>{
@@ -7,15 +7,15 @@ const Navigation =()=>{
     return(
         <>
 
-            <HStack spacing='30px'>
+            <HStack spacing='30px' >
                 <Box w='40px' h='40px' bg='' ml="20px">
-                <Link to="/" color="white">Home</Link>
+                <Link to="/" style={{color:"white",textDecoration:"none"}}>Home</Link>
                 </Box>
                 <Box w='40px' h='40px' bg=''>
-                <Link to="/Movies" color="white">Movies</Link>
+                <Link to="/Movies" style={{color:"white",textDecoration:"none"}}>Movies</Link>
                 </Box>
                 <Box w='40px' h='40px' bg=''>
-                <Link to="/Shows" color="white">Show</Link>
+                <Link to="/Shows" style={{color:"white",textDecoration:"none"}}>Show</Link>
                 </Box>
             </HStack>
 
