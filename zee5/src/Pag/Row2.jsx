@@ -43,27 +43,28 @@ const Rowtwo=({title,rowId})=> {
 
     <>
       
-      {/* <h1 style={{color:"white",border:"1px solid red" ,height:"70px",position:"-webkit-sticky",top:"-700px",textAlign:"start"}}>Trending</h1> */}
+      <h1 style={{color:"white",height:"40px",top:"-240px",textAlign:"start",position:"relative"}}>Upcoming</h1>
       <div style={{position:"relative",textAlign:"center",margin:""}}>
       
         
         <MdChevronLeft
           onClick={slideLeft}
-          style={{color:"white",position:"absolute",left:"0",opacity:"0.5",cursor:"pointer",top:"-23"}}
+          style={{color:"white",position:"absolute",left:"0",opacity:"0.7",cursor:"pointer",top:"71"}}
           size={60}
             />
 
       
         <div
           id={'slider' + rowId}
-          style={{border:"1px solid red",
+          style={{
           marginTop:"-220px",
-          height:"280px",
+          height:"230px",
           display:"flex",
           flexFlow:"wrap",
           flexDirection:"column",
           // overflowX:"scroll",
-          overflowY:"hidden",
+          // overflowY:"hidden",
+          overflow:"hidden",
       
           
           marginBottom:"250px",
@@ -79,7 +80,7 @@ const Rowtwo=({title,rowId})=> {
           
      
           {movie.map((item, id) => (
-            <div style={{margin:"10px"}}>
+            <div style={{margin:"10px",width:"20%" ,height:"200px"}}>
                   <img src={`https://image.tmdb.org/t/p/original/${item?.backdrop_path}`} alt={item?.title} width="90%"  height="200px" key={id?.id}></img>
                   <p style={{color:"white",fontFamily:"inherit",color:"grey"}}>{item.title}</p>
             </div>
@@ -93,7 +94,7 @@ const Rowtwo=({title,rowId})=> {
 
         <MdChevronRight
           onClick={slideRight}
-          style={{color:"white",position:"absolute",left:"0",opacity:"0.5",cursor:"pointer",top:"-23",left:"1200"}}
+          style={{color:"white",position:"absolute",left:"0",opacity:"0.7",cursor:"pointer",top:"71",left:"950"}}
           size={60}/>
 
       </div>
