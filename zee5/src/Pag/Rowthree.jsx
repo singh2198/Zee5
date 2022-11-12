@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios';
+import {motion } from "framer-motion"
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 
 import  {useEffect ,useState} from 'react';
@@ -28,13 +29,20 @@ const Rowthree=({title,rowId})=> {
    
   }, []);
 
+
+  // let box=document.getElementsByClassName('scroll')
+
   const slideLeft = () => {
-    var slider = document.getElementById('slider '+rowId);
-    slider.scrollLeft = slider.scrollLeft - 500;
+  
+    var slider = document.getElementById('slider'+ rowId);
+    // console.log(slider)
+    slider.scrollRight =    slider.scrollRight -500;
+
   };
 
   const slideRight = () => {
     var slider = document.getElementById('slider' + rowId);
+    // console.log(slider)
     slider.scrollLeft = slider.scrollLeft + 500;
   };
   
@@ -43,44 +51,54 @@ const Rowthree=({title,rowId})=> {
 
     <>
       
-      {/* <h1 style={{color:"white",border:"1px solid red" ,height:"70px",position:"-webkit-sticky",top:"-700px",textAlign:"start"}}>Trending</h1> */}
+      <h1 style={{color:"white",height:"40px",top:"-240px",textAlign:"start",position:"relative"}}>Horror</h1>
       <div style={{position:"relative",textAlign:"center",margin:""}}>
+      
+
+        
+
       
         
         <MdChevronLeft
           onClick={slideLeft}
-          style={{color:"white",position:"absolute",left:"0",opacity:"0.5",cursor:"pointer",top:"-23"}}
+          style={{color:"white",position:"absolute",left:"0",opacity:"0.7",cursor:"pointer",top:"71"}}
           size={60}
             />
 
+
+
+
       
+
         <div
           id={'slider' + rowId}
-          style={{border:"1px solid red",
+          style={{
           marginTop:"-220px",
-          height:"280px",
+          // display:"flex",
+          height:"160px",
           display:"flex",
           flexFlow:"wrap",
           flexDirection:"column",
           // overflowX:"scroll",
-          overflowY:"hidden",
-      
+          // overflowY:"hidden",
+          overflow:"hidden",
+          scrollBehavior:"smooth",
+          marginBottom:"54px",
+          // backgroundColor:"lightbrown"
           
-          marginBottom:"250px",
-          // msOverflowY:""
+          }}
           
-          
-          
-          
-          // flexDirection:"column",
-          
-          }}>
+          >
 
           
      
           {movie.map((item, id) => (
-            <div style={{margin:"10px"}}>
-                  <img src={`https://image.tmdb.org/t/p/original/${item?.backdrop_path}`} alt={item?.title} width="90%"  height="200px" key={id?.id}></img>
+            <div style={{margin:"10px",
+            width:"20%" ,
+            height:"200px",
+            boxShadow:"rgba(3, 102, 214, 0.3) ",
+            }}>
+                  <img src={`https://image.tmdb.org/t/p/original/${item?.backdrop_path}`} alt={item?.title} width="90%"  height="250px" key={id?.id}></img>
                   <p style={{color:"white",fontFamily:"inherit",color:"grey"}}>{item.title}</p>
             </div>
             
@@ -90,10 +108,12 @@ const Rowthree=({title,rowId})=> {
         
         </div>
 
+      
+
 
         <MdChevronRight
           onClick={slideRight}
-          style={{color:"white",position:"absolute",left:"0",opacity:"0.5",cursor:"pointer",top:"-23",left:"1200"}}
+          style={{color:"white",position:"absolute",left:"0",opacity:"0.7",cursor:"pointer",top:"71",left:"950"}}
           size={60}/>
 
       </div>

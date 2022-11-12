@@ -16,6 +16,15 @@ const GetTreding=()=>{
 const Row=({title,rowId})=> {
 
   const [movie, setmovies] = useState([]);
+  // const [scrol , setscrol] =useState(false)
+
+
+  
+
+  const handlemouse=(el)=>{
+      // console.log(el)
+      // setscrol(true)
+  }
   
   
  
@@ -43,44 +52,42 @@ const Row=({title,rowId})=> {
 
     <>
       
-      {/* <h1 style={{color:"white",border:"1px solid red" ,height:"70px",position:"-webkit-sticky",top:"-700px",textAlign:"start"}}>Trending</h1> */}
-      <div style={{position:"relative",textAlign:"center",margin:""}}>
+      <h1 style={{color:"white",height:"50px",top:"-160px",textAlign:"start",position:"relative"}}>Trending</h1>
+      <div style={{position:"relative",textAlign:"center",margin:"" ,width:"100%"}}>
       
         
         <MdChevronLeft
           onClick={slideLeft}
-          style={{color:"white",position:"absolute",left:"0",opacity:"0.5",cursor:"pointer",top:"-23"}}
+          style={{color:"white",position:"absolute",left:"0",opacity:"0.7",cursor:"pointer",top:"71"}}
           size={60}
             />
 
       
         <div
           id={'slider' + rowId}
-          style={{border:"1px solid red",
-          marginTop:"-220px",
-          height:"280px",
+          style={{
+          marginTop:"-180px",
+          height:"223px",
           display:"flex",
           flexFlow:"wrap",
           flexDirection:"column",
-          // overflowX:"scroll",
-          overflowY:"hidden",
-      
-          
+          // color:scrol ? "pink":"",
+          // overflowY:"hidden",      
           marginBottom:"250px",
-          // msOverflowY:""
+          overflow:"hidden",
           
           
           
           
-          // flexDirection:"column",
-          
-          }}>
+          }}
+          onMouseEnter={handlemouse()}
+          >
 
           
      
           {movie.map((item, id) => (
-            <div style={{margin:"10px"}}>
-                  <img src={`https://image.tmdb.org/t/p/original/${item?.backdrop_path}`} alt={item?.title} width="90%"  height="200px" key={id?.id}></img>
+            <div style={{margin:"10px",width:"20%" ,height:"200px"}}>
+                  <img src={`https://image.tmdb.org/t/p/original/${item?.backdrop_path}`} alt={item?.title} width="100%"  height="200px" key={id?.id}></img>
                   <p style={{color:"white",fontFamily:"inherit",color:"grey"}}>{item.title}</p>
             </div>
             
@@ -93,7 +100,7 @@ const Row=({title,rowId})=> {
 
         <MdChevronRight
           onClick={slideRight}
-          style={{color:"white",position:"absolute",left:"0",opacity:"0.5",cursor:"pointer",top:"-23",left:"1200"}}
+          style={{color:"white",position:"absolute",left:"0",opacity:"0.7",cursor:"pointer",top:"71",left:"950"}}
           size={60}/>
 
       </div>

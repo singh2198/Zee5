@@ -9,19 +9,19 @@ export function Footer(){
         <>
             <div>
 
-                <div style={{display:"flex",justifyContent:"space-evenly" ,width:"700px" , fontFamily:"revert" ,border:"1px solid red" }}>
-                    <h5 style={{color:"white"}}>About us |</h5>
-                    <h5  style={{color:"white"}}>Help Center |</h5>
-                    <h5 style={{color:"white"}}>Privacy Policy |</h5>
-                    <h5 style={{color:"white"}}> Terms of Use |</h5>
+                <div style={{display:"flex",justifyContent:"space-around" ,width:"700px" , fontFamily:"revert"  }}>
+                    <h5 style={{color:"white"}}>About us </h5>
+                    <h5  style={{color:"white"}}>Help Center </h5>
+                    <h5 style={{color:"white"}}>Privacy Policy </h5>
+                    <h5 style={{color:"white"}}> Terms of Use </h5>
                     {/* <h5  className='text-white'> Preferences |</h5> */}
-                    <h5 style={{color:"white"}}> Preferences |</h5>
+                    <h5 style={{color:"white"}}> Preferences </h5>
                 </div>
 
             </div>
 
             <div style={{display:"flex" ,flexDirection:"row",marginTop:"30px",marginLeft:"10px"}}>
-                    <div style={{height:"300px" , width:"15%"}}>
+                    <div style={{height:"200px" , width:"15%"}}>
                         <h3 style={{color:"white"}}>Pouplar Tv Shows</h3>
                         <h5 style={{color:"grey" ,fontFamily:"revert-layer",marginLeft:"10px", fontSize:"11px"}}>Kumkum Bhagya</h5>
                         <h5 style={{color:"grey" ,fontFamily:"revert-layer",marginLeft:"10px", fontSize:"11px"}}>Kundali Bhagya</h5>
@@ -30,7 +30,7 @@ export function Footer(){
                         <h5 style={{color:"grey" ,fontFamily:"revert-layer",marginLeft:"10px", fontSize:"11px"}}>Kyun Rishton Mein ka</h5>
                     </div>
 
-                    <div style={{height:"300px" , width:"20%"}}>
+                    <div style={{height:"200px" , width:"20%"}}>
                         <h3 style={{color:"white"}}>Preminum Movies</h3>
                         <h5 style={{color:"grey" ,fontFamily:"revert-layer",marginLeft:"10px", fontSize:"11px"}}>Kya Meri Sonam Gupta Bewafa hai</h5>
                         <h5 style={{color:"grey" ,fontFamily:"revert-layer",marginLeft:"10px", fontSize:"11px"}}>Helmet</h5>
@@ -40,7 +40,7 @@ export function Footer(){
                     </div>
 
 
-                    <div style={{height:"300px" , width:"20%"}}>
+                    <div style={{height:"200px" , width:"20%"}}>
                         <h3 style={{color:"white"}}>Pouplar Live Tv Channel</h3>
                         <h5 style={{color:"grey" ,fontFamily:"revert-layer",marginLeft:"10px", fontSize:"11px"}}>Aaj Tak</h5>
                         <h5 style={{color:"grey" ,fontFamily:"revert-layer",marginLeft:"10px", fontSize:"11px"}}>Zee News</h5>
@@ -49,7 +49,7 @@ export function Footer(){
                         <h5 style={{color:"grey" ,fontFamily:"revert-layer",marginLeft:"10px", fontSize:"11px"}}>Zee Marathi HD</h5>
                     </div>
 
-                    <div style={{height:"300px" , width:"20%"}}>
+                    <div style={{height:"200px" , width:"20%"}}>
                         <h3 style={{color:"white"}}>Pouplar Web Series</h3>
                         <h5 style={{color:"grey" ,fontFamily:"revert-layer",marginLeft:"10px", fontSize:"11px"}}>SunFlower </h5>
                         <h5 style={{color:"grey" ,fontFamily:"revert-layer",marginLeft:"10px", fontSize:"11px"}}>Jeet Ki Zid</h5>
@@ -60,7 +60,7 @@ export function Footer(){
                     </div>
 
 
-                    <div style={{height:"300px" , width:"20%"}}>
+                    <div style={{height:"200px" , width:"20%"}}>
                         <h3 style={{color:"white"}}>Bollywood Top Celebrities</h3>
                         <h5 style={{color:"grey" ,fontFamily:"revert-layer",marginLeft:"10px", fontSize:"11px"}}>Sunny Leone</h5>
                         <h5 style={{color:"grey" ,fontFamily:"revert-layer",marginLeft:"10px", fontSize:"11px"}}>Disha Patani</h5>
@@ -69,7 +69,7 @@ export function Footer(){
                         <h5 style={{color:"grey" ,fontFamily:"revert-layer",marginLeft:"10px", fontSize:"11px"}}>Nora Fatehi</h5>
                     </div>
 
-                    <div style={{height:"300px" , width:"20%"}}>
+                    <div style={{height:"200px" , width:"20%"}}>
                         <h3 style={{color:"white"}}>Games & News</h3>
                         <h5 style={{color:"grey" ,fontFamily:"revert-layer",marginLeft:"10px", fontSize:"11px"}}>Play</h5>
                         <h5 style={{color:"grey" ,fontFamily:"revert-layer",marginLeft:"10px", fontSize:"11px"}}>stories</h5>
@@ -77,6 +77,7 @@ export function Footer(){
                         {/* <h5 style={{color:"white" ,fontFamily:"revert-layer",marginLeft:"10px", fontSize:"11px"}}>Salman Khan</h5> */}
                         {/* <h5 style={{color:"white" ,fontFamily:"revert-layer",marginLeft:"10px", fontSize:"11px"}}>Nora Fatehi</h5> */}
                     </div>
+                    <br></br>
 
             </div>
 

@@ -5,6 +5,7 @@ import Row from "./Row"
 // import requests from "../Request/Request"
 import Rowtwo from "./Row2"
 import Rowthree from "./Rowthree"
+// import { color } from "@chakra-ui/react"
 
 
 
@@ -65,22 +66,23 @@ const Home=()=>{
                 )
             })} */}
             <div style={{position:"relative",top:"" }}>
-                        <p text-3xl>helo</p>
+                        
                 <img src={`https://image.tmdb.org/t/p/original/${movi?.backdrop_path}`} alt={movi?.title} width="100%"  height="550px" key={movi?.id}></img>
                         
             </div>
 
-            <div style={{border:"1px solid red",top:"-350px",left:"20px",position:"relative",width:"30%"}}>
-                <p style={{color:"white",marginTop:""}}>
-                    Released: {movi?.release_date}
-                </p>
-                <p style={{color:"white"}}>
+            <div style={{top:"-350px",left:"20px",position:"relative",width:"30%"}}>
+                
+                <p style={{color:"white", fontFamily:"sans-serif",fontSize:"13px"}}>
                 {truncateString(movi?.overview, 150)}
+                </p>
+                <p style={{color:"white",fontSize:"13px",color:"white" ,marginTop:"2px"}}>
+                    Released: {movi?.release_date}
                 </p>
             </div>
                 
 
-            <div style={{display:"flex",border:"1px solid red",height:"80px" ,width:"40%",top:"-349px",left:"20px",position:"relative"}}>
+            <div style={{display:"flex",height:"80px" ,width:"40%",top:"-349px",left:"20px",position:"relative"}}>
                 <button style={{color:"white",
                 border:"1px solid grey",
                 backgroundColor: "black",
@@ -88,16 +90,22 @@ const Home=()=>{
                 width:"90px",
                 borderRadius:"4px",
                 // marginTop:"-123px",
-                fontFamily:"monospace",
+                fontFamily:"fantasy",
                 marginLeft:"",
                 marginRight:"5px",
                 padding:"2px",
                 cursor:"pointer",
+                fontSize:"15px",
+                color:"lightgrey",
+                backgroundColor:"blue"
+                
                 
     
   
                 }
-                }>Watch</button>
+                }
+                onClick={()=> {alert("Play video")}}
+                >Watch</button>
                 <button 
                  style={{color:"white",
                  border:"1px solid grey",
@@ -106,11 +114,14 @@ const Home=()=>{
                  width:"90px",
                  borderRadius:"4px",
                 //  marginTop:"-123px",
-                 fontFamily:"monospace",
+                 fontFamily:"fantasy",
                  marginLeft:"",
                  marginRight:"5px",
                  padding:"",
-                 cursor:"pointer"
+                 cursor:"pointer",
+                 color:"lightgrey",
+                 background:"blue"
+                 
  
                  }}
                 >Buy Plan</button>
