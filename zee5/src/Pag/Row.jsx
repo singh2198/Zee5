@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios';
+import { FaHeart,  } from 'react-icons/fa';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 
 import  {useEffect ,useState} from 'react';
@@ -16,6 +17,8 @@ const GetTreding=()=>{
 const Row=({title,rowId})=> {
 
   const [movie, setmovies] = useState([]);
+  const [heart,setheart]=useState(false)
+  const [hover ,sethover]=useState(false)
   // const [scrol , setscrol] =useState(false)
 
 
@@ -46,19 +49,28 @@ const Row=({title,rowId})=> {
     var slider = document.getElementById('slider' + rowId);
     slider.scrollLeft = slider.scrollLeft + 500;
   };
+
+  const handleHeart=()=>{
+    setheart(true)
+    sethover(true)
+  }
+  const handleHeartout=()=>{
+    setheart(false)
+    sethover(false)
+  }
   
 
   return (
 
     <>
       
-      <h1 style={{color:"white",height:"50px",top:"-160px",textAlign:"start",position:"relative"}}>Trending</h1>
+      <h1 style={{color:"white",height:"95px",top:"-130px",textAlign:"start",position:"relative",left:"16",fontSize:"19"}}>Trending</h1>
       <div style={{position:"relative",textAlign:"center",margin:"" ,width:"100%"}}>
       
         
         <MdChevronLeft
           onClick={slideLeft}
-          style={{color:"white",position:"absolute",left:"0",opacity:"0.7",cursor:"pointer",top:"71"}}
+          style={{color:"white",position:"absolute",left:"0",opacity:"0.7",cursor:"pointer",top:"55"}}
           size={60}
             />
 
@@ -67,7 +79,7 @@ const Row=({title,rowId})=> {
           id={'slider' + rowId}
           style={{
           marginTop:"-180px",
-          height:"223px",
+          height:"200px",
           display:"flex",
           flexFlow:"wrap",
           flexDirection:"column",
@@ -86,8 +98,10 @@ const Row=({title,rowId})=> {
           
      
           {movie.map((item, id) => (
-            <div style={{margin:"10px",width:"20%" ,height:"200px"}}>
-                  <img src={`https://image.tmdb.org/t/p/original/${item?.backdrop_path}`} alt={item?.title} width="100%"  height="200px" key={id?.id}></img>
+            <div style={{margin:"10px",width:"20%" ,height:"200px" ,cursor:hover? "pointer":""}}>
+
+                  { heart ? <FaHeart style={{color:"red",position:"relative",top:"60px",margin:"auto"}} />:""} 
+                  <img src={`https://image.tmdb.org/t/p/original/${item?.backdrop_path}`} alt={item?.title}  style={{opacity:hover? 0.5:1}} width="100%"  height="200px" key={id?.id} onMouseOver={handleHeart} onMouseOut={handleHeartout} onClick={()=>{alert("Add to favourite ")}}></img>
                   <p style={{color:"white",fontFamily:"inherit",color:"grey"}}>{item.title}</p>
             </div>
             
@@ -100,7 +114,7 @@ const Row=({title,rowId})=> {
 
         <MdChevronRight
           onClick={slideRight}
-          style={{color:"white",position:"absolute",left:"0",opacity:"0.7",cursor:"pointer",top:"71",left:"950"}}
+          style={{color:"white",position:"absolute",left:"0",opacity:"0.7",cursor:"pointer",top:"55",left:"950"}}
           size={60}/>
 
       </div>
