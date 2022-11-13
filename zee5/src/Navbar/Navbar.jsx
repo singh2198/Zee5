@@ -41,7 +41,7 @@ const Navbar=()=>{
             <div style={{ width:"50%" ,display:"flex" ,justifyContent:"end" }}> 
                 {/* <input type="text"  placeholder="Search" style={{height:"22px" ,marginTop :"8px",width:"40%"}} /> */}
 
-                {isAuthenticated ? <p style={{color:"white"}}>{user.email}</p>:<p style={{color:"white",textAlign:"center",paddingTop:"11px",marginRight:"5px",width:"90px",fontSize:"12px"}}>Profile</p>}
+                {isAuthenticated ? <p style={{color:"white",textAlign:"center",paddingTop:"11px",marginRight:"5px",width:"90px",fontSize:"12px"}}>{user.name}</p>:<p style={{color:"white",textAlign:"center",paddingTop:"11px",marginRight:"5px",width:"90px",fontSize:"12px"}}>Profile</p>}
 
                 { isAuthenticated ?
                  (<button style={{height:"26px"

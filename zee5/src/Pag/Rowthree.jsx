@@ -1,6 +1,8 @@
 import React from 'react'
 import axios from 'axios';
-import {motion } from "framer-motion"
+
+import { FaHeart,  } from 'react-icons/fa';
+// import {motion } from "framer-motion"
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 
 import  {useEffect ,useState} from 'react';
@@ -17,6 +19,9 @@ const GetTreding=()=>{
 const Rowthree=({title,rowId})=> {
 
   const [movie, setmovies] = useState([]);
+  const [heart,setheart]=useState(false)
+  const [hover ,sethover]=useState(false)
+  // const [redheart,setredheart]=useState(false)
   
   
  
@@ -46,12 +51,23 @@ const Rowthree=({title,rowId})=> {
     slider.scrollLeft = slider.scrollLeft + 500;
   };
   
+  const handleHeart=()=>{
+      setheart(true)
+      sethover(true)
+  }
+  const handleHeartout=()=>{
+    setheart(false)
+    sethover(false)
+  }
+  // const handleclickheart=()=>{
+  //   setredheart(true)
+  // }
 
   return (
 
     <>
       
-      <h1 style={{color:"white",height:"40px",top:"-240px",textAlign:"start",position:"relative"}}>Horror</h1>
+      <h1 style={{color:"white",height:"20px",top:"-270px",textAlign:"start",position:"relative",fontSize:"19px",left:"16px" }}>Horror</h1>
       <div style={{position:"relative",textAlign:"center",margin:""}}>
       
 
@@ -61,20 +77,15 @@ const Rowthree=({title,rowId})=> {
         
         <MdChevronLeft
           onClick={slideLeft}
-          style={{color:"white",position:"absolute",left:"0",opacity:"0.7",cursor:"pointer",top:"71"}}
+          style={{color:"white",position:"absolute",left:"0",opacity:"0.7",cursor:"pointer",top:"60"}}
           size={60}
             />
 
-
-
-
-      
 
         <div
           id={'slider' + rowId}
           style={{
           marginTop:"-220px",
-          // display:"flex",
           height:"160px",
           display:"flex",
           flexFlow:"wrap",
@@ -83,23 +94,27 @@ const Rowthree=({title,rowId})=> {
           // overflowY:"hidden",
           overflow:"hidden",
           scrollBehavior:"smooth",
-          marginBottom:"54px",
-          // backgroundColor:"lightbrown"
-          
+          marginBottom:"74px",
           }}
           
           >
-
           
-     
+        
           {movie.map((item, id) => (
             <div style={{margin:"10px",
             width:"20%" ,
             height:"200px",
+            cursor:hover? "pointer":"",
+            // backgroundColor:hover? "grey":"",
             boxShadow:"rgba(3, 102, 214, 0.3) ",
-            }}>
-                  <img src={`https://image.tmdb.org/t/p/original/${item?.backdrop_path}`} alt={item?.title} width="90%"  height="250px" key={id?.id}></img>
+            }}>   
+
+                  
+                  { heart ? <FaHeart style={{color:"red",position:"relative",top:"60px",margin:"auto"}} />:""}
+              
+                  <img src={`https://image.tmdb.org/t/p/original/${item?.backdrop_path}`} alt={item?.title}  style={{opacity:hover? 0.5:1}}  width="90%"  height="250px" key={id?.id} onMouseOver={handleHeart} onMouseOut={handleHeartout} onClick={()=>{alert("Add to favourite ")}}></img>
                   <p style={{color:"white",fontFamily:"inherit",color:"grey"}}>{item.title}</p>
+
             </div>
             
           ))}
@@ -113,7 +128,7 @@ const Rowthree=({title,rowId})=> {
 
         <MdChevronRight
           onClick={slideRight}
-          style={{color:"white",position:"absolute",left:"0",opacity:"0.7",cursor:"pointer",top:"71",left:"950"}}
+          style={{color:"white",position:"absolute",left:"0",opacity:"0.7",cursor:"pointer",top:"60",left:"950"}}
           size={60}/>
 
       </div>
